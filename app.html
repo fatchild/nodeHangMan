@@ -1,0 +1,76 @@
+<!DOCTYPE html> <!--HTML5 DOCTYPE-->
+<html lang="en">
+  <head>
+    <title>Hangman</title>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> <!--viewport for mobile first design-->
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❓</text></svg>" />
+
+    <link rel="stylesheet" type="text/css" href="./css/app.css" />
+    <script src="./jsApp/app.js" defer type="module"></script>
+
+    <!-- INCLUDE Bootstrap 4 from a CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+
+    <div class="container-fluid">
+      <div class="d-flex justify-content-center">
+        <h1 class="display-3">Hard Hangman</h1>
+      </div>
+      <div class="jumbotron pt-3">
+       <div class="m-auto">
+        <div id="letters" class="row gx-5">
+          <div id="a" onclick="guess('a')" class="col-1 p-1 m-1 btn btn-secondary">a</div>
+          <div id="b" onclick="guess('b')" class="col-1 p-1 m-1 btn btn-secondary">b</div>
+          <div id="c" onclick="guess('c')" class="col-1 p-1 m-1 btn btn-secondary">c</div>
+          <div id="d" onclick="guess('d')" class="col-1 p-1 m-1 btn btn-secondary">d</div>
+          <div id="e" onclick="guess('e')" class="col-1 p-1 m-1 btn btn-secondary">e</div>
+          <div id="f" onclick="guess('f')" class="col-1 p-1 m-1 btn btn-secondary">f</div>
+          <div id="g" onclick="guess('g')" class="col-1 p-1 m-1 btn btn-secondary">g</div>
+          <div id="h" onclick="guess('h')" class="col-1 p-1 m-1 btn btn-secondary">h</div>
+          <div id="i" onclick="guess('i')" class="col-1 p-1 m-1 btn btn-secondary">i</div>
+          <div id="j" onclick="guess('j')" class="col-1 p-1 m-1 btn btn-secondary">j</div>
+          <div id="k" onclick="guess('k')" class="col-1 p-1 m-1 btn btn-secondary">k</div>
+          <div id="l" onclick="guess('l')" class="col-1 p-1 m-1 btn btn-secondary">l</div>
+          <div id="m" onclick="guess('m')" class="col-1 p-1 m-1 btn btn-secondary">m</div>
+          <div id="n" onclick="guess('n')" class="col-1 p-1 m-1 btn btn-secondary">n</div>
+          <div id="o" onclick="guess('o')" class="col-1 p-1 m-1 btn btn-secondary">o</div>
+          <div id="p" onclick="guess('p')" class="col-1 p-1 m-1 btn btn-secondary">p</div>
+          <div id="q" onclick="guess('q')" class="col-1 p-1 m-1 btn btn-secondary">q</div>
+          <div id="r" onclick="guess('r')" class="col-1 p-1 m-1 btn btn-secondary">r</div>
+          <div id="s" onclick="guess('s')" class="col-1 p-1 m-1 btn btn-secondary">s</div>
+          <div id="t" onclick="guess('t')" class="col-1 p-1 m-1 btn btn-secondary">t</div>
+          <div id="u" onclick="guess('u')" class="col-1 p-1 m-1 btn btn-secondary">u</div>
+          <div id="v" onclick="guess('v')" class="col-1 p-1 m-1 btn btn-secondary">v</div>
+          <div id="w" onclick="guess('w')" class="col-1 p-1 m-1 btn btn-secondary">w</div>
+          <div id="x" onclick="guess('x')" class="col-1 p-1 m-1 btn btn-secondary">x</div>
+          <div id="y" onclick="guess('y')" class="col-1 p-1 m-1 btn btn-secondary">y</div>
+          <div id="z" onclick="guess('z')" class="col-1 p-1 m-1 btn btn-secondary">z</div>
+        </div>
+       </div>
+       <div class="d-flex justify-content-center pt-5">
+        <p id="definition"></p>
+       </div>
+       <div class="d-flex justify-content-center pb-5 display-2">
+        <p id="guesses"></p>
+       </div>
+       <div id="word" class="row gx-2">
+       </div>
+       <div id="lives"></div>
+       <div class="d-flex justify-content-center mt-5">
+         <div onclick="resetGame()" class="btn btn-secondary" id="reset">reset</div>
+       </div>
+      </div>
+    </div>
+
+  </body>
+</html>
+<footer>
+  <p class="pl-4 py-0">v1.0.0 <a href="https://github.com/fatchild"><img class="ml-2" src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="20"></img></a></p>
+</footer>
