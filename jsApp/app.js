@@ -13,6 +13,7 @@ let guessesTaken
 let guessesElem
 let lettersElem
 let correctGuesses
+let revealElem
 
 
 // INITIALIZATION
@@ -27,6 +28,7 @@ const init = () => {
     wordElem = document.getElementById('word')
     guessesElem = document.getElementById('guesses')
     lettersElem = document.getElementById('letters')
+    revealElem = document.getElementById('reveal')
 
     resetGame()
 }
@@ -57,8 +59,9 @@ window.guess = (guess) => {
     guessesTaken.push(guess)
     guesses -= 1
     if (guesses < 1){
-        console.log("Hangman")
-        resetGame()
+        revealing(false)
+        // resetGame()
+        return
     }
     guessesElem.textContent = guesses
     console.log(guesses)
@@ -86,9 +89,9 @@ window.guess = (guess) => {
         letter.classList.add("btn-outline-danger");
     }
 
-    // if (correctGuesses === word.length){
-    //     resetGame()
-    // }
+    if (correctGuesses === word.length){
+        revealing(true)
+    }
 
     // Animate the thing 
     // let letter = document.getElementById(guess)
@@ -96,11 +99,27 @@ window.guess = (guess) => {
     // letter.classList.add("btn-outline-secondary");
 }
 
+window.revealing = (correct) => {
+    console.log("revealing")
+
+    revealElem.textContent = `${word}`
+    revealElem.classList.add("border") 
+    revealElem.classList.add("p-3") 
+    revealElem.classList.add("rounded") 
+    correct ? revealElem.classList.add("border-success") : revealElem.classList.add("border-danger")
+}
+
 window.resetGame = () => {
     console.log("resetGame")
     word = undefined
     guessesTaken = []
     correctGuesses = 0
+    revealElem.textContent = ""
+    revealElem.classList.remove("border")
+    revealElem.classList.remove("p-3") 
+    revealElem.classList.remove("rounded")  
+    revealElem.classList.remove("border-success")
+    revealElem.classList.remove("border-danger")
 
     // Reset all of the buttons
     for (let i = 0; i < lettersElem.children.length; i++) {
